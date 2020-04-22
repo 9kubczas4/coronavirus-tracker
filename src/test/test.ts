@@ -12,7 +12,7 @@ describe("Array", () => {
     it("add 1 and 2 should return 3", () => {
       const expectedValue: number = 3;
       const result = add(1, 2);
-      assert.equal(result, expectedValue, 'Result of add is incorect')
+      assert.equal(result, expectedValue, "Result of add is incorect");
     });
   });
 });
