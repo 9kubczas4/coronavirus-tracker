@@ -1,3 +1,3 @@
 export interface NotificationService {
-  notify(report: string): void;
+  notify(report: string): Promise<void>;
 }
