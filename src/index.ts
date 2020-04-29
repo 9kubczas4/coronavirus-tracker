@@ -5,7 +5,7 @@ import { ReportBuilder } from './interfaces/report-builder';
 import { ReportService } from './interfaces/report.service';
 import { CoronavirusStatus } from './models/coronavirus-status';
 import { ConsoleNotificationService } from './services/console-notification.service';
-import { CoronavirusReportBuilder } from './services/coronavirus-report-builder';
+import { CoronavirusReportBuilder } from './services/plain-text-report-builder';
 import { CoronavirusReportService } from './services/coronavirus-report.service';
 import { CoronavirusTrackerApiService } from './services/coronavirus-tracker-api.service';
 
