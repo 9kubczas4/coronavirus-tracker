@@ -1,5 +1,4 @@
 import sgMail from '@sendgrid/mail';
-import chalk from 'chalk';
 import program from 'commander';
 import { Notifications } from './enums/notifications';
 import { FileHelper } from './helpers/file.helper';
@@ -14,6 +13,7 @@ import { CoronavirusTrackerApiService } from './services/coronavirus-tracker-api
 import { EmailNotificationService } from './services/email-notification.service';
 import { HtmlReportBuilder } from './services/html-report-builder';
 import { PlainTextReportBuilder } from './services/plain-text-report-builder';
+import { Startup } from './startup/startup';
 
 program
   .option('-n, --notify <type>', 'console or mail', Notifications.Console)
@@ -35,14 +35,5 @@ const notificationService: NotificationService = program.notify === Notification
   ? new EmailNotificationService(config)
   : new ConsoleNotificationService();
 
-coronaApiService.getLocations()
-  .then((data) => {
-    const report: string = reportBuilder.build(data);
-    return notificationService.notify(report);
-  })
-  .then(() => {
-    console.log(chalk.green('Process finished'));
-  })
-  .catch((error) => {
-    console.log(chalk.red(`There has been an error ${JSON.stringify(error).slice(0, 1000)}`));
-  });
+  const main = new Startup(coronaApiService, reportBuilder, notificationService);
+  main.run();
