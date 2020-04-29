@@ -1,0 +1,230 @@
+{
+  "latest": {
+    "confirmed": 2809977,
+    "deaths": 197004,
+    "recovered": 0
+  },
+  "locations": [
+    {
+      "id": 0,
+      "country": "Afghanistan",
+      "country_code": "AF",
+      "country_population": 37172386,
+      "province": "",
+      "last_updated": "2020-04-25T18:15:09.420105Z",
+      "coordinates": {
+        "latitude": "33.0",
+        "longitude": "65.0"
+      },
+      "latest": {
+        "confirmed": 1351,
+        "deaths": 43,
+        "recovered": 0
+      }
+    },
+    {
+      "id": 1,
+      "country": "Albania",
+      "country_code": "AL",
+      "country_population": 2866376,
+      "province": "",
+      "last_updated": "2020-04-25T18:15:09.424780Z",
+      "coordinates": {
+        "latitude": "41.1533",
+        "longitude": "20.1683"
+      },
+      "latest": {
+        "confirmed": 678,
+        "deaths": 27,
+        "recovered": 0
+      }
+    },
+    {
+      "id": 2,
+      "country": "Algeria",
+      "country_code": "DZ",
+      "country_population": 42228429,
+      "province": "",
+      "last_updated": "2020-04-25T18:15:09.429084Z",
+      "coordinates": {
+        "latitude": "28.0339",
+        "longitude": "1.6596"
+      },
+      "latest": {
+        "confirmed": 3127,
+        "deaths": 415,
+        "recovered": 3
+      }
+    },
+    {
+      "id": 3,
+      "country": "Andorra",
+      "country_code": "AD",
+      "country_population": 77006,
+      "province": "",
+      "last_updated": "2020-04-25T18:15:09.433608Z",
+      "coordinates": {
+        "latitude": "42.5063",
+        "longitude": "1.5218"
+      },
+      "latest": {
+        "confirmed": 731,
+        "deaths": 40,
+        "recovered": 0
+      }
+    },
+    {
+      "id": 4,
+      "country": "Angola",
+      "country_code": "AO",
+      "country_population": 30809762,
+      "province": "",
+      "last_updated": "2020-04-25T18:15:09.440557Z",
+      "coordinates": {
+        "latitude": "-11.2027",
+        "longitude": "17.8739"
+      },
+      "latest": {
+        "confirmed": 25,
+        "deaths": 2,
+        "recovered": 0
+      }
+    },
+    {
+      "id": 5,
+      "country": "Antigua and Barbuda",
+      "country_code": "AG",
+      "country_population": 96286,
+      "province": "",
+      "last_updated": "2020-04-25T18:15:09.448720Z",
+      "coordinates": {
+        "latitude": "17.0608",
+        "longitude": "-61.7964"
+      },
+      "latest": {
+        "confirmed": 24,
+        "deaths": 3,
+        "recovered": 0
+      }
+    },
+    {
+      "id": 6,
+      "country": "Argentina",
+      "country_code": "AR",
+      "country_population": 44494502,
+      "province": "",
+      "last_updated": "2020-04-25T18:15:09.456097Z",
+      "coordinates": {
+        "latitude": "-38.4161",
+        "longitude": "-63.6167"
+      },
+      "latest": {
+        "confirmed": 3607,
+        "deaths": 176,
+        "recovered": 1
+      }
+    },
+    {
+      "id": 7,
+      "country": "Armenia",
+      "country_code": "AM",
+      "country_population": 2951776,
+      "province": "",
+      "last_updated": "2020-04-25T18:15:09.461971Z",
+      "coordinates": {
+        "latitude": "40.0691",
+        "longitude": "45.0382"
+      },
+      "latest": {
+        "confirmed": 1596,
+        "deaths": 27,
+        "recovered": 0
+      }
+    },
+    {
+      "id": 8,
+      "country": "Australia",
+      "country_code": "AU",
+      "country_population": 24992369,
+      "province": "Australian Capital Territory",
+      "last_updated": "2020-04-25T18:15:09.466092Z",
+      "coordinates": {
+        "latitude": "-35.4735",
+        "longitude": "149.0124"
+      },
+      "latest": {
+        "confirmed": 105,
+        "deaths": 3,
+        "recovered": 0
+      }
+    },
+    {
+      "id": 9,
+      "country": "Australia",
+      "country_code": "AU",
+      "country_population": 24992369,
+      "province": "New South Wales",
+      "last_updated": "2020-04-25T18:15:09.470028Z",
+      "coordinates": {
+        "latitude": "-33.8688",
+        "longitude": "151.2093"
+      },
+      "latest": {
+        "confirmed": 2982,
+        "deaths": 33,
+        "recovered": 0
+      }
+    },
+    {
+      "id": 10,
+      "country": "Australia",
+      "country_code": "AU",
+      "country_population": 24992369,
+      "province": "Northern Territory",
+      "last_updated": "2020-04-25T18:15:09.473819Z",
+      "coordinates": {
+        "latitude": "-12.4634",
+        "longitude": "130.8456"
+      },
+      "latest": {
+        "confirmed": 28,
+        "deaths": 0,
+        "recovered": 0
+      }
+    },
+    {
+      "id": 11,
+      "country": "Australia",
+      "country_code": "AU",
+      "country_population": 24992369,
+      "province": "Queensland",
+      "last_updated": "2020-04-25T18:15:09.477689Z",
+      "coordinates": {
+        "latitude": "-28.0167",
+        "longitude": "153.4"
+      },
+      "latest": {
+        "confirmed": 1026,
+        "deaths": 6,
+        "recovered": 0
+      }
+    },
+    {
+      "id": 12,
+      "country": "Australia",
+      "country_code": "AU",
+      "country_population": 24992369,
+      "province": "South Australia",
+      "last_updated": "2020-04-25T18:15:09.481492Z",
+      "coordinates": {
+        "latitude": "-34.9285",
+        "longitude": "138.6007"
+      },
+      "latest": {
+        "confirmed": 438,
+        "deaths": 4,
+        "recovered": 0
+      }
+    }
+  ]
+}
