@@ -5,11 +5,28 @@
     ],
     "jsRules": {},
     "rules": {
-        "no-console": false,
         "no-any": true,
+        "interface-name": false,
         "quotemark": [true, "single"],
+        "no-console": false,
+        "max-line-length": [true, 140],
+        "trailing-comma": [true, {
+            "singleline": "never",
+            "multiline": {
+              "objects": "never",
+              "arrays": "always",
+              "functions": "never",
+              "typeLiterals": "ignore"
+            }
+        }],
         "ordered-imports": true,
-        "interface-name": false
+        "object-literal-sort-keys": [
+            true,
+            "ignore-blank-lines",
+            "ignore-case",
+            "locale-compare",
+            "match-declaration-order"
+        ]
     },
     "rulesDirectory": []
 }

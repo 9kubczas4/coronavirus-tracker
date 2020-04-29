@@ -1,28 +1,48 @@
+import sgMail from '@sendgrid/mail';
 import chalk from 'chalk';
+import program from 'commander';
+import { Notifications } from './enums/notifications';
+import { FileHelper } from './helpers/file.helper';
 import { CoronavirusApiService } from './interfaces/coronavirus-api.service';
 import { NotificationService } from './interfaces/notification.service';
 import { ReportBuilder } from './interfaces/report-builder';
 import { ReportService } from './interfaces/report.service';
-import { CoronavirusStatus } from './models/coronavirus-status';
+import { Config } from './models/config';
 import { ConsoleNotificationService } from './services/console-notification.service';
-import { CoronavirusReportBuilder } from './services/plain-text-report-builder';
 import { CoronavirusReportService } from './services/coronavirus-report.service';
 import { CoronavirusTrackerApiService } from './services/coronavirus-tracker-api.service';
+import { EmailNotificationService } from './services/email-notification.service';
+import { HtmlReportBuilder } from './services/html-report-builder';
+import { PlainTextReportBuilder } from './services/plain-text-report-builder';
 
-console.log(chalk.blue('start'));
-const coronavirusApiService: CoronavirusApiService = new CoronavirusTrackerApiService();
-const reportService: ReportService = new CoronavirusReportService();
-const reportBuilder: ReportBuilder = new CoronavirusReportBuilder(reportService);
-const notificationService: NotificationService = new ConsoleNotificationService();
+program
+  .option('-n, --notify <type>', 'console or mail', Notifications.Console)
+  .option('-l, --list <items>', 'countries list', (value: string) => value.split(','));
+program.parse(process.argv);
 
-coronavirusApiService.getLocations()
-  .then((data: CoronavirusStatus) => {
-    const report = reportBuilder.build(data);
+const config = FileHelper.readJson<Config>('./config/config.json');
+if (program.notify === Notifications.Mail && config.mailSettings.apiKey) {
+  sgMail.setApiKey(config.mailSettings.apiKey);
+}
+
+const countries = program.list ? program.list : config.countries;
+const coronaApiService: CoronavirusApiService = new CoronavirusTrackerApiService();
+const coronavirusReportService: ReportService = new CoronavirusReportService();
+const reportBuilder: ReportBuilder = program.notify === Notifications.Mail
+  ? new HtmlReportBuilder(coronavirusReportService, countries)
+  : new PlainTextReportBuilder(coronavirusReportService, countries);
+const notificationService: NotificationService = program.notify === Notifications.Mail
+  ? new EmailNotificationService(config)
+  : new ConsoleNotificationService();
+
+coronaApiService.getLocations()
+  .then((data) => {
+    const report: string = reportBuilder.build(data);
     return notificationService.notify(report);
   })
   .then(() => {
-    console.log(chalk.green('success'));
+    console.log(chalk.green('Process finished'));
   })
-  .catch((err) => {
-    console.log(chalk.red(err));
+  .catch((error) => {
+    console.log(chalk.red(`There has been an error ${JSON.stringify(error).slice(0, 1000)}`));
   });

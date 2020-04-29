@@ -54,7 +54,7 @@ export class CoronavirusReportService implements ReportService {
   }
 
   private getTopNCountriesWithHighestXFactor(n: number, data: CoronavirusStatus,
-    x: (previousValue: number, currentValue: Location) => number): ReportItem[] {
+                                             x: (previousValue: number, currentValue: Location) => number): ReportItem[] {
     if (n <= 0) {
       return [];
     }
@@ -64,8 +64,8 @@ export class CoronavirusReportService implements ReportService {
       return {
         country: countryName,
         value: groupedCountries[countryName].reduce((prev, curr) =>  x(prev, curr), 0)
-      }
-    })
+      };
+    });
     return _.orderBy(countriesWithDeathCases, 'value', 'desc').slice(0, n);
   }
 

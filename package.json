@@ -7,7 +7,9 @@
     "test": "mocha -r ts-node/register ./src/test/**.*",
     "lint": "tslint --project .",
     "build": "npm run lint && tsc",
-    "start": "npx ts-node ./src/index"
+    "start": "npx ts-node ./src/index",
+    "start:mail": "npx ts-node ./src/index --notify mail",
+    "start:countries": "npx ts-node ./src/index -l pl,it,de"
   },
   "repository": {
     "type": "git",
@@ -20,9 +22,11 @@
   },
   "homepage": "https://github.com/9kubczas4/coronavirus-tracker#readme",
   "dependencies": {
+    "@sendgrid/mail": "^7.0.1",
     "@types/lodash": "^4.14.150",
     "@types/request": "^2.48.4",
     "chalk": "^4.0.0",
+    "commander": "^5.1.0",
     "lodash": "^4.17.15",
     "request": "^2.88.2"
   },

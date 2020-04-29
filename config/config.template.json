@@ -1,0 +1,8 @@
+{
+  "countries": [],
+  "mailSettings": {
+    "from": "EMAIL ACCOUNT",
+    "to": "EMAIL ACCOUNT",
+    "apiKey": "SEND GRID API KEY"
+  }
+}

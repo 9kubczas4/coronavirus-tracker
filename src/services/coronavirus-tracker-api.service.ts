@@ -8,8 +8,6 @@ export class CoronavirusTrackerApiService implements CoronavirusApiService {
   public getLocations(): Promise<CoronavirusStatus> {
     return new Promise<CoronavirusStatus>((resolve, reject) => {
       request(CoronavirusTrackerApiService.LOCATIONS_URL, (err, response) => {
-        console.log(err);
-        console.log(response.body.slice(0.50));
         err
           ? reject(err)
           : resolve(JSON.parse(response.body));
