@@ -23,8 +23,10 @@
   "homepage": "https://github.com/9kubczas4/coronavirus-tracker#readme",
   "dependencies": {
     "@sendgrid/mail": "^7.0.1",
+    "@types/aws-lambda": "^8.10.51",
     "@types/lodash": "^4.14.150",
     "@types/request": "^2.48.4",
+    "aws-lambda": "^1.0.6",
     "chalk": "^4.0.0",
     "commander": "^5.1.0",
     "lodash": "^4.17.15",
